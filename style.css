@@ -1,0 +1,552 @@
+/*bases*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+body {
+    background-color: black;
+}
+
+/* start */
+#themebtn {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 2000;
+
+    background-color: white;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+/* navbar */
+nav ul {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li {
+    padding: 20px;
+    font-size: 20px;
+list-style-type: none;
+}
+
+nav ul li a {
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* under line */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: grey;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: dodgerblue;
+
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* home*/
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home img {
+    margin-top: 155px;
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
+    border: 3px solid gray;
+    transition: transform ease 0.3s;
+
+}
+
+.home img:hover {
+    transform: scale(1.1);
+}
+
+.text {
+    text-align: center;
+    margin: 50px;
+}
+
+.text h1 span {
+    color: dodgerblue;
+
+}
+
+
+.text h1 {
+    color: #fff;
+}
+
+.text h4 {
+    margin-top: 27px;
+    color: gray;
+}
+
+.btn {
+    text-align: center;
+}
+
+.btn button {
+    color: white;
+    padding: 10px 24px;
+    margin: 0 10px;
+    background-color: rgb(90, 167, 245);
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: medium;
+    transition: all 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: dodgerblue;
+    transform: translateY(-5px);
+}
+
+/*project*/
+h3 {
+    color: white;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 30px;
+}
+
+.icon img {
+    height: 55px;
+    width: 55px;
+    transition: all 0.3s ease;
+}
+
+.icon img:hover {
+    transform: translateY(-5px);
+    border: 3px solid darkcyan;
+    border-radius: 50%;
+}
+
+.q {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.q h1 {
+    color: dodgerblue;
+    font-size: xx-large;
+    font-weight: 1200;
+    margin: 70px 0;
+}
+
+.a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster {
+    display: inline-block;
+    gap: 30px;
+    margin: 20px;
+    text-align: left;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster:hover {
+
+    box-shadow: 0 10px 25px rgba(101, 101, 101, 0.4);
+}
+
+.poster img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.poster p {
+    color: dodgerblue;
+    background-color: #1e1e1e;
+}
+
+
+.poster h3 {
+    background-color: #1e1e1e;
+    font-size: 24px;
+
+}
+
+/*experiacn*/
+.p p {
+    color: dodgerblue;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 90px;
+    margin-bottom: 50px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    display: inline-block;
+    background-color: #1e1e1e;
+    width: 300px;
+    height: 300px;
+    align-items: left;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 19px;
+    transition: all 0.3s ease;
+}
+
+.list:hover {
+
+    box-shadow: 0 10px 25px rgba(101, 101, 101, 0.4);
+}
+
+.list h1 {
+    color: white;
+    font-weight: bolder;
+    background-color: #1e1e1e;
+    text-align: center;
+    margin: 20px;
+    font-size: 24px;
+}
+
+.list h2 {
+    color: rgb(236, 227, 221);
+    background-color: #1e1e1e;
+    text-align: center;
+    font-size: 18px;
+}
+
+.list p {
+    color: rgb(232, 223, 223);
+    background-color: #1e1e1e;
+    text-align: center;
+    margin: 30px;
+}
+
+/* contact*/
+.c p {
+    color: dodgerblue;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+.line p {
+    color: white;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+
+/* form */
+
+.contact-form {
+    display: inline-block;
+    background-color: #1e1e1e;
+    width: 424px;
+    height: 414px;
+    align-items: left;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 14px;
+}
+
+.contact-form:hover {
+    box-shadow: 0 10px 25px rgba(101, 101, 101, 0.4);
+}
+
+.form-group {
+    color: dodgerblue;
+    background-color: #1e1e1e;
+
+}
+
+/* form-names*/
+.form-group label {
+    background-color: #1e1e1e;
+    text-align: center;
+    margin-left: 140px;
+    margin-top: 20px;
+
+}
+
+/* form-placeholder*/
+#name {
+    background-color: #434343;
+    padding: 5px;
+    border-radius: 9px;
+    margin: 16px 0;
+    width: 378px;
+    height: 40px;
+    border: 1px solid #1e1e1e;
+}
+
+#email {
+    background-color: #434343;
+    padding: 5px;
+    border-radius: 9px;
+    margin: 16px 0;
+
+    width: 378px;
+    height: 40px;
+    border: 1px solid #1e1e1e;
+}
+
+#message {
+    background-color: #434343;
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 40px;
+    width: 378px;
+    margin: 16px 0;
+    height: 102px;
+}
+
+/* form-button*/
+.submit-btn {
+    color: antiquewhite;
+    background-color: dodgerblue;
+    width: 378px;
+    height: 42px;
+    border-radius: 10px;
+    border: 2px solid #1e1e1e;
+
+}
+
+.submit-btn:active {
+    background-color: rgb(40, 70, 101);
+}
+
+/* Social Links */
+.contact-info {
+    background-color: #1c1c1c;
+    padding: 0 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    max-width: 424px;
+    /* Set a max width for better layout */
+    margin: 30px;
+    height: 414px;
+}
+
+.contact-info:hover {
+    box-shadow: 0 10px 25px rgba(101, 101, 101, 0.4);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: dodgerblue;
+    background-color: #1c1c1c;
+}
+
+.contact-info p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #ddd;
+    background-color: #1c1c1c;
+}
+
+.contact-info p a {
+    color: dodgerblue;
+    text-decoration: none;
+    background-color: #1c1c1c;
+}
+
+.contact-info p a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    background-color: #1c1c1c;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: #1c1c1c;
+}
+
+.social-link img {
+    width: 60px;
+    height: 60px;
+    filter: grayscale(100%);
+    transition: filter 0.3s, transform 0.3s;
+    margin-bottom: 10px;
+    background-color: #1c1c1c;
+}
+
+.social-link:hover img {
+    filter: none;
+    transform: scale(1.2);
+}
+
+.social-link span {
+    font-size: 16px;
+    color: #fff;
+    transition: color 0.3s;
+    background-color: #1c1c1c;
+}
+
+.social-link:hover span {
+    color: dodgerblue;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 20px;
+    }
+
+    .social-link img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-link span {
+        font-size: 14px;
+    }
+
+    .contact-container {
+        align-items: center;
+        /* Center items */
+    }
+
+    .contact-form,
+    .contact-info {
+        max-width: 90%;
+        /* Make forms take more width on small screens */
+    }
+}
+
+
+
+
+
+
+/* ligth theme */
+.ligth-theme {
+    background-color: white;
+    color: black;
+}
+
+
+.ligth-theme nav ul {
+    background-color: white;
+}
+
+.ligth-theme nav ul li a {
+    color: black;
+}
+.ligth-theme nav ul li a:hover{
+    color: dodgerblue;
+}
+
+.ligth-theme .text h1 {
+    color: black;
+}
+
+.ligth-theme .text h4 {
+    color: darkslategray;
+
+}
+
+.ligth-theme .btn button {
+    color: black;
+}
+
+.ligth-theme h3 {
+    color: black;
+}
+
+.ligth-theme .poster:hover,
+.ligth-theme .list:hover,
+.ligth-theme .contact-form:hover,
+.ligth-theme .contact-info:hover {
+    box-shadow: 0 12px 25px darkcyan;
+}
+
+.ligth-theme .poster h3 {
+    color: #fff;
+}
+
+.ligth-theme .line p {
+    color: black;
+}
+
+.ligth-theme .contact-info h3{
+    color: #fff;
+}
+.ligth-theme #themebtn{
+    background-color: #1e1e1e;
+    color: #ddd;
+}
