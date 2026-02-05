@@ -560,19 +560,13 @@ h3 {
 
 
 
+/* =================================
+   REAL MOBILE FIX (Screenshots Based)
+================================= */
 
+@media (max-width: 480px) {
 
-/* ===================================
-   FINAL MOBILE RESET (360–420px)
-=================================== */
-
-@media (max-width: 420px) {
-
-  /* RESET WIDTH PROBLEMS */
-  * {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+  /* ===== GLOBAL ===== */
 
   body {
     overflow-x: hidden;
@@ -580,42 +574,36 @@ h3 {
 
   section {
     width: 100%;
-    padding: 20px 10px;
+    padding: 25px 12px;
   }
 
 
-  /* ===== NAVBAR ===== */
+  /* ===== NAVBAR FIX ===== */
 
-  nav {
-    height: 60px;
+  nav ul {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: block !important;
   }
 
   .nav-container {
     width: 100%;
-    padding: 0 15px;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .menu-toggle {
-    font-size: 28px;
   }
 
   .nav-links {
-    position: fixed !important;
+    position: fixed;
     top: 60px;
     left: 0;
-    width: 100% !important;
-    height: calc(100vh - 60px);
-    background: #000;
-    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: black;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transform: translateX(-100%);
-    transition: 0.4s ease;
+    transition: 0.3s ease;
   }
 
   .nav-links.active {
@@ -623,45 +611,70 @@ h3 {
   }
 
   .nav-links li {
-    margin: 18px 0;
+    margin: 20px 0;
   }
 
   .nav-links a {
     font-size: 22px;
   }
 
+  #themebtn {
+    top: 8px;
+    right: 10px;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+
+  /* ===== PROJECT ===== */
+
+  .a {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poster {
+    width: 95%;
+  }
+
+
+  /* ===== EXPERIENCE ===== */
+
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .list {
+    width: 95%;
+    height: auto;
+  }
+
 
   /* ===== CONTACT ===== */
 
   .center {
-    width: 100%;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
+    width: 100%;
   }
 
   .contact-form,
   .contact-info {
-    width: 100% !important;
-    max-width: 360px;
-    margin: 10px auto;
-    padding: 18px;
-    border-radius: 14px;
+    width: 95% !important;
+    max-width: 100%;
+    margin: 12px auto;
   }
 
-  /* REMOVE FIXED INPUT WIDTH */
   #name,
   #email,
   #message,
   .submit-btn {
     width: 100% !important;
-    margin: 8px 0;
   }
 
   .form-group label {
     margin-left: 0;
     text-align: left;
-    font-size: 14px;
   }
 
 }
