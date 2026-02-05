@@ -549,4 +549,119 @@ h3 {
 .ligth-theme #themebtn{
     background-color: #1e1e1e;
     color: #ddd;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   FINAL MOBILE RESET (360–420px)
+=================================== */
+
+@media (max-width: 420px) {
+
+  /* RESET WIDTH PROBLEMS */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+
+  /* ===== NAVBAR ===== */
+
+  nav {
+    height: 60px;
+  }
+
+  .nav-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .menu-toggle {
+    font-size: 28px;
+  }
+
+  .nav-links {
+    position: fixed !important;
+    top: 60px;
+    left: 0;
+    width: 100% !important;
+    height: calc(100vh - 60px);
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    margin: 18px 0;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+  }
+
+
+  /* ===== CONTACT ===== */
+
+  .center {
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+    max-width: 360px;
+    margin: 10px auto;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  /* REMOVE FIXED INPUT WIDTH */
+  #name,
+  #email,
+  #message,
+  .submit-btn {
+    width: 100% !important;
+    margin: 8px 0;
+  }
+
+  .form-group label {
+    margin-left: 0;
+    text-align: left;
+    font-size: 14px;
+  }
+
 }
