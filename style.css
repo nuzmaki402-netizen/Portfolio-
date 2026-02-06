@@ -634,9 +634,7 @@ h3 {
 
 #themebtn{
 
-   position: fixed;
-
-   margin-top: 100%;
+display: none;
 
 }
 
@@ -709,6 +707,7 @@ h3 {
 
 
 }
+
 
 
 
