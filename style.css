@@ -637,27 +637,48 @@ h3 {
 
 
 
-/* ===== SIMPLE MOBILE NAVBAR RESPONSIVE ===== */
+
+
+
+
+/* ===== FORCE SHOW NAVBAR ON MOBILE ===== */
 
 @media (max-width: 420px) {
 
   nav {
-    padding: 10px 15px;
+    display: flex !important;
+    padding: 10px 12px;
   }
 
   .nav-links {
-    display: flex;
-    flex-direction: row; /* row hi rahe */
-    gap: 12px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    position: static !important;
+    height: auto !important;
+    width: auto !important;
+    background: transparent !important;
+  }
+
+  .nav-links li {
+    display: block !important;
   }
 
   .nav-links li a {
-    font-size: 13px;   /* chhota text */
-    padding: 4px 6px;  /* kam space */
+    font-size: 12px !important;
+    padding: 3px 5px !important;
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    display: none !important; /* hamburger band */
   }
 
   .theme-btn {
-    font-size: 12px;
-    padding: 4px 8px;
+    font-size: 11px !important;
+    padding: 4px 6px !important;
   }
 }
