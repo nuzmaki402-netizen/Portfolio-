@@ -637,25 +637,27 @@ h3 {
 
 
 
+/* ===== SIMPLE MOBILE NAVBAR RESPONSIVE ===== */
 
+@media (max-width: 420px) {
 
-/* FIX HAMBURGER ICON */
-
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-
-  .menu-toggle {
-    display: block !important;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    font-size: 28px;
-    z-index: 9999;
+  nav {
+    padding: 10px 15px;
   }
 
+  .nav-links {
+    display: flex;
+    flex-direction: row; /* row hi rahe */
+    gap: 12px;
+  }
+
+  .nav-links li a {
+    font-size: 13px;   /* chhota text */
+    padding: 4px 6px;  /* kam space */
+  }
+
+  .theme-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
 }
