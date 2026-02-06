@@ -540,47 +540,6 @@ h3 {
 
 
 
-/* ===== FORCE SHOW NAVBAR ON MOBILE ===== */
-
-@media (max-width: 420px) {
-
-  nav {
-    display: flex !important;
-    padding: 10px 12px;
-  }
-
-  .nav-links {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    position: static !important;
-    height: auto !important;
-    width: auto !important;
-    background: transparent !important;
-  }
-
-  .nav-links li {
-    display: block !important;
-  }
-
-  .nav-links li a {
-    font-size: 12px !important;
-    padding: 3px 5px !important;
-    white-space: nowrap;
-  }
-
-  .menu-toggle {
-    display: none !important; /* hamburger band */
-  }
-
-  .theme-btn {
-    font-size: 11px !important;
-    padding: 4px 6px !important;
-  }
-}
 
 
 
@@ -591,23 +550,65 @@ h3 {
 
 
 
-/* ===== REAL MOBILE NAVBAR FIX ===== */
+
+/* ========== FINAL MOBILE FIX (STABLE) ========== */
 
 @media (max-width: 480px) {
 
+  body {
+    overflow-x: hidden;
+  }
+
+  /* NAVBAR */
   nav ul {
     display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 6px 0;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 4px;
+    flex-wrap: nowrap;
   }
 
   nav ul li {
-    padding: 6px 8px;
-    font-size: 14px;
+    padding: 4px 6px;
   }
 
   nav ul li a {
-    font-size: 13px;
+    font-size: 12px;
   }
+
+  /* THEME BUTTON */
+  #themebtn {
+    top: 60px;   /* navbar ke neeche */
+    right: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+    z-index: 3000;
+  }
+
+  /* HOME SECTION */
+  .home img {
+    margin-top: 120px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .text {
+    margin: 20px;
+  }
+
+  .text h1 {
+    font-size: 22px;
+  }
+
+  .text h4 {
+    font-size: 14px;
+  }
+
+  /* BUTTONS */
+  .btn button {
+    padding: 6px 14px;
+    font-size: 13px;
+    margin: 5px;
+  }
+
 }
