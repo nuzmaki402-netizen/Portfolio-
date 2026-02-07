@@ -219,61 +219,6 @@ h3 {
 
 }
 
-/*experiacn*/
-.p p {
-    color: dodgerblue;
-    text-align: center;
-    font-size: 32px;
-    font-weight: 900;
-    margin-top: 90px;
-    margin-bottom: 50px;
-}
-
-.info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.list {
-    display: inline-block;
-    background-color: #1e1e1e;
-    width: 300px;
-    height: 300px;
-    align-items: left;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 19px;
-    transition: all 0.3s ease;
-}
-
-.list:hover {
-
-    box-shadow: 0 10px 25px rgba(101, 101, 101, 0.4);
-}
-
-.list h1 {
-    color: white;
-    font-weight: bolder;
-    background-color: #1e1e1e;
-    text-align: center;
-    margin: 20px;
-    font-size: 24px;
-}
-
-.list h2 {
-    color: rgb(236, 227, 221);
-    background-color: #1e1e1e;
-    text-align: center;
-    font-size: 18px;
-}
-
-.list p {
-    color: rgb(232, 223, 223);
-    background-color: #1e1e1e;
-    text-align: center;
-    margin: 30px;
-}
 
 /* contact*/
 .c p {
@@ -642,28 +587,17 @@ display: none;
 
 
 
-  /* EXPERIENCE */
-
-  .info {
-
-    flex-direction: column;
-
-  }
-
-
-
-  .list {
-
-    width: 95%;
-
-    height: auto;
-
-  }
-
-
-
-
-
+  
+/* from placeholder*/
+#name{
+    width:235px;
+}
+#email{
+    width:235px;
+}
+#message{
+    width:320px;
+}
   /* CONTACT */
 
   .center {
@@ -707,6 +641,7 @@ display: none;
 
 
 }
+
 
 
 
