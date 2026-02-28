@@ -413,59 +413,59 @@ h3 {
 
 
 /* ligth theme */
-.ligth-theme {
+.light-theme {
     background-color: white;
     color: black;
 }
 
 
-.ligth-theme nav ul {
+.light-theme nav ul {
     background-color: white;
 }
 
-.ligth-theme nav ul li a {
+.light-theme nav ul li a {
     color: black;
 }
-.ligth-theme nav ul li a:hover{
+.light-theme nav ul li a:hover{
     color: dodgerblue;
 }
 
-.ligth-theme .text h1 {
+.light-theme .text h1 {
     color: black;
 }
 
-.ligth-theme .text h4 {
+.light-theme .text h4 {
     color: darkslategray;
 
 }
 
-.ligth-theme .btn button {
+.light-theme .btn button {
     color: black;
 }
 
-.ligth-theme h3 {
+.light-theme h3 {
     color: black;
 }
 
-.ligth-theme .poster:hover,
-.ligth-theme .list:hover,
-.ligth-theme .contact-form:hover,
-.ligth-theme .contact-info:hover {
+.light-theme .poster:hover,
+.light-theme .list:hover,
+.light-theme .contact-form:hover,
+.light-theme .contact-info:hover {
     box-shadow: 0 12px 25px darkcyan;
 }
 
-.ligth-theme .poster h3 {
+.light-theme .poster h3 {
     color: #fff;
 }
 
-.ligth-theme .line p {
+.light-theme .line p {
     color: black;
 }
 
-.ligth-theme .contact-info h3{
+.light-theme .contact-info h3{
     color: #fff;
 }
-.ligth-theme #themebtn{
+.light-theme #themebtn{
     background-color: #1e1e1e;
     color: #ddd;
 
@@ -662,6 +662,7 @@ display: none;
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
