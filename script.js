@@ -10,36 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let w = 0, c = 0, del = false;
 
+ 
+        
+
     function type() {
 
-      const word = words[w];
+  const word = words[w];
 
-      if (!del) {
+  if (!del) {
 
-        text.textContent = word.slice(0, c++);
-
-        if (c > word.length) {
-          del = true;
-          setTimeout(type, 800);
-          return;
-        }
-
-      } else {
-
-        text.textContent = word.slice(0, c--);
-
-        if (c < 0) {
-          del = false;
-          w = (w + 1) % words.length;
-        }
-
-      }
-
-      setTimeout(type, del ? 60 : 100);
+    text.textContent = word.slice(0, c++);
+    
+    if (c === word.length) {
+      del = true;
+      setTimeout(type, 1000);
+      return;
     }
 
-    type();
+  } else {
+
+    text.textContent = word.slice(0, c--);
+
+    if (c === 0) {
+      del = false;
+      w = (w + 1) % words.length;
+      setTimeout(type, 300);
+      return;
+    }
+
   }
+
+  setTimeout(type, del ? 60 : 100);
+}
+
 
 
   /* Scroll Animation */
@@ -50,12 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach(e => {
+ entries.forEach(e => {
 
-      if (e.isIntersecting) {
-        e.target.classList.add("show");
-        e.target.classList.remove("hide");
-      }
+  if (e.isIntersecting) {
+
+    e.target.classList.add("show");
+    e.target.classList.remove("hide");
+
+  } else {
+
+    e.target.classList.remove("show");
+    e.target.classList.add("hide");
+
+  }
+
+});
+
 
     });
 
