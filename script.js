@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!del) {
 
         text.textContent = word.slice(0, c++);
+
         if (c > word.length) {
           del = true;
           setTimeout(type, 800);
@@ -65,52 +66,56 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
-});
 
+  /* Buttons */
 
+  const getInTouchBtn = document.getElementById("contactBtn");
+  const downloadBtn = document.getElementById("downloadBtn");
 
+  if (getInTouchBtn) {
 
-// button click
- const getInTouchBtn = document.getElementById("contactBtn");
-const downloadBtn = document.getElementById("downloadBtn");
+    getInTouchBtn.addEventListener("click", () => {
+      document
+        .getElementById("contact")
+        .scrollIntoView({ behavior: "smooth" });
+    });
 
-
-  getInTouchBtn.addEventListener("click", () => {
-    alert("Thanks for reaching out! Scroll down to the contact section 👇");
-    document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
-  });
-
-  downloadBtn.addEventListener("click", () => {
-    alert("Your CV is being prepared for download!");
-    // Example: Replace with actual file link
-    window.open("cv.pdf", "_blank");
-  });
-
-// theme button
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-theme");
-}
-
-let btn = document.getElementById("themebtn");
-btn.addEventListener("click", () => {
-  document.body.classList.toggle("ligth-theme");
-  if (btn.innerText === "Light-Mode") {
-    btn.innerText = "Dark-Mode";
-     localStorage.setItem("theme", "light");
-  } else {
-    btn.innerText = "Light-Mode";
-     localStorage.setItem("theme", "dark");
   }
+
+  if (downloadBtn) {
+
+    downloadBtn.addEventListener("click", () => {
+      window.open("cv.pdf", "_blank");
+    });
+
+  }
+
+
+  /* Theme */
+
+  const btn = document.getElementById("themebtn");
+
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+    btn.textContent = "Dark-Mode";
+  }
+
+  btn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-theme");
+
+    if (document.body.classList.contains("light-theme")) {
+
+      btn.textContent = "Dark-Mode";
+      localStorage.setItem("theme", "light");
+
+    } else {
+
+      btn.textContent = "Light-Mode";
+      localStorage.setItem("theme", "dark");
+
+    }
+
+  });
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
