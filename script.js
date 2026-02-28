@@ -1,72 +1,76 @@
-
-// Wait until DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-  /* -------------------------
-     Smooth Scroll Navigation
-  --------------------------*/
-  document.querySelectorAll("nav ul li a").forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute("href"));
-      target.scrollIntoView({ behavior: "smooth" });
-    });
-  });
-});
 
-  /* -------------------------
-     Smooth Typing Animation
-  --------------------------*/
+  /* Typing */
+
   const text = document.querySelector(".text h1 span");
 
-if (!text) return; // safety
+  if (text) {
 
-  
- const words = [
-    "about it!",
-     "with passion!",
-      "every day!",
-      "to inspire others!"
-      ];
-  
-   let wordindex =0;
-   let charindex =0;
-   let deleting = false;
+    const words = ["about it!", "with passion!", "every day!", "to inspire!"];
 
-function typeEffect() {
-  let currentword = words[wordindex];
+    let w = 0, c = 0, del = false;
 
-if (!deleting) {
-  text.textContent = currentword.slice(0,charindex +1);
-  charindex++;
+    function type() {
 
+      const word = words[w];
 
-if (charindex === currentword.length) {
-  setTimeout(()=> deleting=true,1000);
-}
-}
+      if (!del) {
 
-else{
-  text.textContent = currentword.slice(0, charindex-1);
-  charindex--;
+        text.textContent = word.slice(0, c++);
+        if (c > word.length) {
+          del = true;
+          setTimeout(type, 800);
+          return;
+        }
 
-  if (charindex === 0) {
-    deleting= false;
-    wordindex = (wordindex + 1)% words.length;
+      } else {
+
+        text.textContent = word.slice(0, c--);
+
+        if (c < 0) {
+          del = false;
+          w = (w + 1) % words.length;
+        }
+
+      }
+
+      setTimeout(type, del ? 60 : 100);
+    }
+
+    type();
   }
-}
-setTimeout(() => {
-  deleting = true;
-}, 1000);
-
-}
-
-typeEffect();
-  
 
 
-  /* -------------------------
-     Button Click Effects
-  --------------------------*/
+  /* Scroll Animation */
+
+  const items = document.querySelectorAll(
+    ".poster, .contact-form, .contact-info, .icon img, .text, .btn"
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(e => {
+
+      if (e.isIntersecting) {
+        e.target.classList.add("show");
+        e.target.classList.remove("hide");
+      }
+
+    });
+
+  }, { threshold: 0.2 });
+
+  items.forEach(el => {
+    el.classList.add("hide");
+    observer.observe(el);
+  });
+
+});
+
+
+
+
+// button click
  const getInTouchBtn = document.getElementById("contactBtn");
 const downloadBtn = document.getElementById("downloadBtn");
 
@@ -80,33 +84,6 @@ const downloadBtn = document.getElementById("downloadBtn");
     alert("Your CV is being prepared for download!");
     // Example: Replace with actual file link
     window.open("cv.pdf", "_blank");
-  });
-
-  /* -------------------------
-     Premium Scroll Animations
-  --------------------------*/
-  const Elements = document.querySelectorAll(
-  ".poster, .contact-form, .contact-info, .icon img, .text, .btn"
-);
-
- 
-  const scrollobserver = new IntersectionObserver(
-    entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        entry.target.classList.remove("hide")
-      }
-      else{
-        entry.target.classList.remove("show")
-        entry.target.classList.add("hide")
-      }
-    });
-  }, { threshold: 0.2 });
-
-  Elements.forEach(el =>{
-    el.classList.add("hide");
-    scrollobserver.observe(el);
   });
 
 // theme button
