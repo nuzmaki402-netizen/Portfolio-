@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
      Smooth Typing Animation
   --------------------------*/
   const text = document.querySelector(".text h1 span");
+
+if (!text) return; // safety
+
   
  const words = [
     "about it!",
@@ -51,8 +54,10 @@ else{
     wordindex = (wordindex + 1)% words.length;
   }
 }
+setTimeout(() => {
+  deleting = true;
+}, 1000);
 
-setTimeout(typeEffect,deleting? 50: 100);
 }
 
 typeEffect();
