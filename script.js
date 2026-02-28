@@ -85,7 +85,10 @@ const downloadBtn = document.getElementById("downloadBtn");
   /* -------------------------
      Premium Scroll Animations
   --------------------------*/
-  const Elements = document.querySelectorAll(".poster, .list, .contact-form, .contact-info, .icon img, .text, .btn");
+  const Elements = document.querySelectorAll(
+  ".poster, .contact-form, .contact-info, .icon img, .text, .btn"
+);
+
  
   const scrollobserver = new IntersectionObserver(
     entries => {
