@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       target.scrollIntoView({ behavior: "smooth" });
     });
   });
+});
 
   /* -------------------------
      Smooth Typing Animation
