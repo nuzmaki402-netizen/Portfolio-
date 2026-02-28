@@ -15,36 +15,48 @@ document.addEventListener("DOMContentLoaded", () => {
   /* -------------------------
      Smooth Typing Animation
   --------------------------*/
-  const textElement = document.querySelector(".text h1 span");
-  const phrases = ["about it!", "with passion!", "every day!", "to inspire others!"];
-  let i = 0, j = 0, currentPhrase = [], isDeleting = false;
+  const text = document.querySelector(".text h1 span");
+  
+ const words = [
+    "about it!",
+     "with passion!",
+      "every day!",
+      "to inspire others!"
+      ];
+  
+   let wordindex =0;
+   let charindex =0;
+   let deleting = false;
 
-  function loop() {
-    textElement.style.transition = "all 0.5s ease-in-out";
-    textElement.textContent = currentPhrase.join("");
+function typeEffect() {
+  let currentword = words[wordindex];
 
-    if (i < phrases.length) {
-      if (!isDeleting && j <= phrases[i].length) {
-        currentPhrase.push(phrases[i][j]);
-        j++;
-      } else if (isDeleting && j > 0) {
-        currentPhrase.pop();
-        j--;
-      } else if (!isDeleting && j === phrases[i].length) {
-        isDeleting = true;
-        setTimeout(loop, 1200);
-        return;
-      } else if (isDeleting && j === 0) {
-        isDeleting = false;
-        i++;
-        if (i === phrases.length) i = 0;
-      }
-    }
+if (!deleting) {
+  text.textContent = currentword.slice(0,charindex +1);
+  charindex++;
 
-    const speed = isDeleting ? 80 : 120;
-    setTimeout(loop, speed);
+
+if (charindex === currentword.length) {
+  setTimeout(()=> deleting=true,1000);
+}
+}
+
+else{
+  text.textContent = currentword.slice(0, charindex-1);
+  charindex--;
+
+  if (charindex === 0) {
+    deleting= false;
+    wordindex = (wordindex + 1)% words.length;
   }
-  loop();
+}
+
+setTimeout(typeEffect,deleting? 50: 100);
+}
+
+typeEffect();
+  
+
 
   /* -------------------------
      Button Click Effects
@@ -66,26 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
   /* -------------------------
      Premium Scroll Animations
   --------------------------*/
-  const fadeElements = document.querySelectorAll(".poster, .list, .contact-form, .contact-info, .icon img, .text, .btn");
-  fadeElements.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(40px)";
-    el.style.transition = "all 0.8s ease-out";
-  });
-
-  const observer = new IntersectionObserver(entries => {
+  const Elements = document.querySelectorAll(".poster, .list, .contact-form, .contact-info, .icon img, .text, .btn");
+ 
+  const scrollobserver = new IntersectionObserver(
+    entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-        observer.unobserve(entry.target);
+        entry.target.classList.add("show");
+        entry.target.classList.remove("hide")
+      }
+      else{
+        entry.target.classList.remove("show")
+        entry.target.classList.add("hide")
       }
     });
   }, { threshold: 0.2 });
 
-  fadeElements.forEach(el => observer.observe(el));
-
-})
+  Elements.forEach(el =>{
+    el.classList.add("hide");
+    scrollobserver.observe(el);
+  });
 
 // theme button
 
