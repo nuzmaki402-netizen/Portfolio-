@@ -67,8 +67,9 @@ typeEffect();
   /* -------------------------
      Button Click Effects
   --------------------------*/
-  const getInTouchBtn = document.querySelector(".btn button:first-child");
-  const downloadBtn = document.querySelector(".btn button:last-child");
+ const getInTouchBtn = document.getElementById("contactBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+
 
   getInTouchBtn.addEventListener("click", () => {
     alert("Thanks for reaching out! Scroll down to the contact section 👇");
@@ -106,6 +107,9 @@ typeEffect();
   });
 
 // theme button
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light-theme");
+}
 
 let btn = document.getElementById("themebtn");
 btn.addEventListener("click", () => {
