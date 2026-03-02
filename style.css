@@ -202,7 +202,7 @@ h3 {
     box-shadow: 0 10px 25px rgba(101, 101, 101, 0.4);
 }
 
-.poster img {
+.poster a img {
     width: 100%;
     border-radius: 10px;
 }
@@ -662,6 +662,7 @@ display: none;
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
