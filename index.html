@@ -1,199 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" class="css">
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frontend Engineer Portfolio - Nuzmaki's projects and experience" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Nuzmaki - Frontend Engineer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!--navbar-->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <!-- theme button -->
-        <button id="themebtn">Light-Mode</button>
+  
 
+  <!-- Navigation Header -->
+  <header class="header" role="banner">
+    <nav class="navbar" aria-label="Main navigation">
+      <ul class="navbar__list">
+        <li class="navbar__item">
+          <a href="#home" class="navbar__link">Home</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#about" class="navbar__link">About</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#projects" class="navbar__link">Projects</a>
+        </li>
+        <li class="navbar__item">
+          <a href="#contact" class="navbar__link">Contact</a>
+        </li>
+      </ul>
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="Toggle dark/light mode"
+        aria-pressed="false"
+      >
+        <span class="theme-toggle__text">Light Mode</span>
+      </button>
     </nav>
+  </header>
 
-
-    <!--home-->
-    <section id="home">
-        <div class="home">
-            <img src="anime.webp">
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero__content">
+        <figure class="hero__avatar">
+          <img
+            src="anime.webp"
+            alt="Nuzmaki - Frontend Engineer"
+            class="hero__image"
+            width="190"
+            height="190"
+          />
+        </figure>
+        <div class="hero__text">
+          <h1 class="hero__title">
+            I do code and make career <span class="hero__highlight" role="status" aria-live="polite">about it!</span>
+          </h1>
+          <p class="hero__subtitle">I am a frontend engineer with over 6 years of learning.</p>
         </div>
-        <div class="text">
-            <h1>I do code and make career <span>about it!</span></h1>
-            <h4>I am a frontend engineer with over 6 years of learning.</h4>
+        <div class="hero__actions">
+          <button class="button button--primary" id="scrollToContact" type="button">
+            Get in Touch
+          </button>
+          <a
+            href="cv.pdf"
+            download
+            class="button button--secondary"
+            aria-label="Download CV in PDF format"
+          >
+            Download CV
+          </a>
         </div>
-
-        <div class="btn">
-            <button type="submit" id="contactBtn">Get in Touch</button>
-            <a href="cv.pdf" download> <button type="submit" id="downloadBtn">Download CV</button> </a>
-        </div>
+      </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about__container">
+        <article class="profile-card">
+          <header class="profile-card__header">
+            <div class="profile-card__avatar" aria-hidden="true">
+              <span class="profile-card__initials">N</span>
+            </div>
+            <h2 class="profile-card__name">Nuzmaki</h2>
+            <p class="profile-card__title">Frontend Engineer</p>
+          </header>
 
-    <!-- =========== ABOUT SECTION =========== -->
-    <section class="about-section" id="about">
-        <div class="about-container">
+          <div class="profile-card__body">
+            <p class="profile-card__description">
+              I craft clean, responsive, and user-centric web experiences with modern technologies.
+              With <strong>6+ years of learning and building</strong>, I transform ideas into elegant,
+              performant interfaces that inspire and engage.
+            </p>
 
-            <!-- Profile Card -->
-            <div class="about-card">
-                <div class="profile-header">
-                    <div class="profile-avatar">
-                        <span class="avatar-initials">N</span>
-                    </div>
-                    <h2 class="profile-name">Nuzmaki</h2>
-                    <p class="profile-title">Frontend Engineer</p>
-                </div>
-
-                <div class="profile-body">
-                    <p class="about-text">
-                        I craft clean, responsive, and user-centric web experiences with modern technologies.
-                        With <strong>6+ years of learning and building</strong>, I transform ideas into elegant,
-                        performant interfaces that inspire and engage.
-                    </p>
-
-                    <div class="skills-grid">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">UI/UX Principles</span>
-                    </div>
-
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Years Learning</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Dedication</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="skills" role="region" aria-label="Technical skills">
+              <span class="skill-badge">HTML5</span>
+              <span class="skill-badge">CSS3</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Responsive Design</span>
+              <span class="skill-badge">UI/UX Principles</span>
             </div>
 
-            <!-- Decorative Elements (CSS Only) -->
-            <div class="decoration decoration-1"></div>
-            <div class="decoration decoration-2"></div>
-
-        </div>
+            <div class="stats" role="region" aria-label="Professional statistics">
+              <div class="stat">
+                <span class="stat__value">50+</span>
+                <span class="stat__label">Projects</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">6+</span>
+                <span class="stat__label">Years Learning</span>
+              </div>
+              <div class="stat">
+                <span class="stat__value">100%</span>
+                <span class="stat__label">Dedication</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <main>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="projects__header">
+        <h2 class="projects__title">Experience With</h2>
+        <div class="tech-icons" role="region" aria-label="Technology stack">
+          <img src="html.png" alt="HTML5" class="tech-icon" loading="lazy" width="55" height="55" />
+          <img src="css.png" alt="CSS3" class="tech-icon" loading="lazy" width="55" height="55" />
+          <img src="js.png" alt="JavaScript" class="tech-icon" loading="lazy" width="55" height="55" />
+          <img src="react.png" alt="React" class="tech-icon" loading="lazy" width="55" height="55" />
+        </div>
+      </div>
 
-        <!--project-->
-        <section id="project">
-            <h3>Experience With</h3>
-            <div class="icon">
-                <img src="html.png" alt="">
-                <img src="css.png" alt="">
-                <img src="js.png" alt="">
-                <img src="react.png" alt="">
+      <div class="projects__section">
+        <h3 class="projects__heading">Projects</h3>
+        <div class="projects__grid">
+          <article class="project-card">
+            <a
+              href="https://nuzmaki402-netizen.github.io/E-commerce-/"
+              class="project-card__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="e-commerce.png"
+                alt="E-commerce Project - Full-featured online store"
+                class="project-card__image"
+                loading="lazy"
+                width="300"
+                height="200"
+              />
+            </a>
+            <h4 class="project-card__title">E-commerce</h4>
+            <p class="project-card__type">Website</p>
+          </article>
+
+          <article class="project-card">
+            <a
+              href="https://nuzmaki402-netizen.github.io/Todo-list/"
+              class="project-card__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="todo-list.png"
+                alt="Todo List Project - Task management application"
+                class="project-card__image"
+                loading="lazy"
+                width="300"
+                height="200"
+              />
+            </a>
+            <h4 class="project-card__title">Todo List</h4>
+            <p class="project-card__type">Web Page</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="contact__header">
+        <h2 class="contact__title">Get in Touch</h2>
+        <p class="contact__subtitle">
+          If you'd like to chat about a project or just say hello, feel free to drop a message!
+        </p>
+      </div>
+
+      <div class="contact__container">
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <fieldset class="form-fieldset">
+            <legend class="sr-only">Contact information</legend>
+
+            <div class="form-group">
+              <label for="contactName" class="form-label">Your Name *</label>
+              <input
+                type="text"
+                id="contactName"
+                name="name"
+                class="form-input"
+                placeholder="Enter your name"
+                required
+                aria-required="true"
+                aria-describedby="nameError"
+              />
+              <span id="nameError" class="form-error" role="alert"></span>
             </div>
-            <div class="q">
-                <h1>Project</h1>
+
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">Your Email *</label>
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                class="form-input"
+                placeholder="Enter your email"
+                required
+                aria-required="true"
+                aria-describedby="emailError"
+              />
+              <span id="emailError" class="form-error" role="alert"></span>
             </div>
-            <div class="a">
-                <div class="poster">
-                    <a href="https://nuzmaki402-netizen.github.io/E-commerce-/">
-                        <img src="e-commerce.png" alt="HTML Tutorial">
-                    </a>
-                    <h3>E-commerce</h3>
-                    <p>web-site</p>
-                </div>
 
-
-                <div class="poster">
-                    <a href="https://nuzmaki402-netizen.github.io/Todo-list/">
-                        <img src="todo-list.png" alt="HTML Tutorial">
-                    </a>
-                    <h3>Todo-List</h3>
-                    <p>web-page</p>
-                </div>
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Your Message *</label>
+              <textarea
+                id="contactMessage"
+                name="message"
+                class="form-input form-textarea"
+                placeholder="Type your message here"
+                required
+                aria-required="true"
+                aria-describedby="messageError"
+              ></textarea>
+              <span id="messageError" class="form-error" role="alert"></span>
             </div>
-        </section>
 
+            <button type="submit" class="button button--primary button--submit">
+              Send Message
+            </button>
+          </fieldset>
+        </form>
 
-    </main>
-    <footer>
-        <!--contact-->
-        <section id="contact">
-            <div class="c">
-                <p>Get in Touch</p>
-            </div>
-            <div class="line">
-                <p>If you’d like to chat about a project or just say hello, feel free to drop a message!</p>
-            </div>
-            <!-- improve -->
-            <!-- Contact Form -->
-            <div class="center">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" rows="5" placeholder="Type your message here" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h3 class="contact-info__title">Let's Connect</h3>
+          <p class="contact-info__text">Follow me on social media or drop me an email!</p>
 
+          <nav class="social-links" aria-label="Social media links">
+            <a
+              href="https://www.instagram.com/thego4t_naruto"
+              class="social-link"
+              aria-label="Visit Instagram profile (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="Instagram.png" alt="" class="social-link__icon" loading="lazy" width="60" height="60" />
+              <span class="social-link__text">Instagram</span>
+            </a>
+            <a
+              href="https://github.com/nuzmaki402-netizen"
+              class="social-link"
+              aria-label="Visit GitHub profile (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="github.png" alt="" class="social-link__icon" loading="lazy" width="60" height="60" />
+              <span class="social-link__text">GitHub</span>
+            </a>
+            <a
+              href="https://www.fiverr.com/go4t_naruto"
+              class="social-link"
+              aria-label="Visit Fiverr profile (opens in new tab)"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="fiverr-icon.png" alt="" class="social-link__icon" loading="lazy" width="60" height="60" />
+              <span class="social-link__text">Fiverr</span>
+            </a>
+          </nav>
 
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>Follow me on social media or drop me an email!</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/thego4t_naruto" class="social-link">
-                            <img src="Instagram.png">
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://github.com/nuzmaki402-netizen" class="social-link">
-                            <img src="github.png" alt="GitHub">
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.fiverr.com/go4t_naruto" class="social-link">
-                            <img src="fiverr-icon.png" alt="Fiverr">
-                            <span>Fiverr</span>
-                        </a>
-                    </div>
-                    <p>Email: <a href="mailto:nuzmaki402@gmail.com">nuzmaki402@gmail.com</a></p>
-                </div>
-            </div>
-            </div>
-        </section>
-    </footer>
-    
+          <p class="contact-info__email">
+            Email: <a href="mailto:nuzmaki402@gmail.com" class="contact-info__link">nuzmaki402@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script src="script.js"></script>
+  <!-- Notification container for toast messages (ARIA live region) -->
+  <div id="notificationContainer" class="notification-container" role="region" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
 </body>
-
-
-
 </html>
-
-
-
 
