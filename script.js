@@ -276,34 +276,28 @@ const TypingEffect = (() => {
 // ============================================================================
 // SCROLL ANIMATION MODULE (One-directional, optimized)
 // ============================================================================
-
-const ScrollAnimation = (() => {
-  let observer = null;
-  const observedElements = new WeakSet();
-
-  const handleIntersection = (entries) => {
-    entries.forEach((entry) => {
-      // Only add visible class once (one-directional)
-      if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
-        entry.target.classList.remove('fade-in');
-        entry.target.classList.add('visible');
-      }
-    });
-  };
-
-  const init = () => {
-    if (observer) return; // Prevent multiple observers
-
-    const observerOptions = {
-      threshold: CONFIG.SCROLL_ANIMATION_THRESHOLD,
-      rootMargin: '0px 0px -50px 0px',
-    };
-
-    observer = new IntersectionObserver(
-      handleIntersection,
-      observerOptions
-    );
-
+const animatedElements = document.querySelectorAll(  
+        ".hero__avatar, .hero__title, .hero__subtitle, .hero__actions, .about, .profile-card__header, " +  
+        ".profile-card__description, .skills, .stats, .projects, .tech-icons, .projects__section, .project-card, " +  
+        ".project-card__title, .project-card__type, .contact, .contact__title, .contact__subtitle, " +
+        ".contact-form, .form-group, .button button--primary button--submit, .contact-info, .social-links, .contact-info__email"
+    );  
+  
+    const scrollObserver = new IntersectionObserver((entries) => {  
+        entries.forEach(entry => {  
+            const isVisible = entry.isIntersecting;  
+            entry.target.classList.toggle("show", isVisible);  
+            entry.target.classList.toggle("hide", !isVisible);  
+        });  
+    }, {   
+        threshold: 0.2,  
+        rootMargin: "0px 0px -50px 0px"   
+    });  
+  
+    animatedElements.forEach(el => {  
+        el.classList.add("hide");  
+        scrollObserver.observe(el);  
+    });  
     // Initialize all animated elements
     DOM.animatedElements.forEach((element) => {
       if (!observedElements.has(element)) {
